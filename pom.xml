@@ -198,7 +198,7 @@
          </pluginManagement>
         </build>
 	<distributionManagement>
-        <repository>
+       <!-- <repository>
             <id>deployment</id>
             <name>Internal Releases</name>
             <url>http://xxxxxxxxxxxxx:8081/repository/xxxxxxxxx/</url>
@@ -207,6 +207,6 @@
             <id>deployment</id>
             <name>Internal Snapshot Releases</name>
             <url>http://xxxxxxxxxxxxx:8081/repository/xxxxxxxxx/</url>
-        </snapshotRepository>
+        </snapshotRepository>-->
     </distributionManagement>
 </project>
