@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+     
+     stages {
+        stage ('Initialize Environment Variables) {
+                steps {
+                sh '''
+                    echo "Setup Environment Variables in Jenkins"
+					echo "PATH = ${PATH}"					
+                    echo "M2_HOME = ${M2_HOME}"
+                    echo "JAVA_HOME = ${JAVA_HOME}"
+                    '''
+                }
+            }
+        stage (' Cloning Code base from GIT'){
+            steps {
+				checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '090c2824-5f22-4bf5-9947-ee467dc9b055', url: 'https://github.com/ITHelp-Stream/shopizer.git']]]
+
+        }
+        }
+        stage ('Build the code using Maven') {
+                steps {
+                    sh 'mvn clean compile install'
+                    }
+         }
+        
+        }
+        
+    }
