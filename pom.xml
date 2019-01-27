@@ -129,8 +129,13 @@
 		    <groupId>com.googlecode.json-simple</groupId>
 		    <artifactId>json-simple</artifactId>
 		    <version>${simple-json-version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+		<dependency>
+			<groupId>org.sonarsource.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<version>3.2</version>
 		</dependency>	
-		
     </dependencies>
 
 	<modules>
@@ -168,7 +173,7 @@
    		<properties>
    		<!-- Optional URL to server. Default value is http://localhost:9000 -->
     		<sonar.host.url>
-      			http://192.168.56.101:9000
+      			http://192.168.56.102:9000
     		</sonar.host.url>
    		</properties>
   		</profile>
