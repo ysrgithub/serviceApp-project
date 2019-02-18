@@ -197,13 +197,13 @@
 </plugins>
 		<finalName>shopizer</finalName>
 	</build>
-	<!--<distributionManagement>
+	<distributionManagement>
           <snapshotRepository>
                 <id>nexus</id>
                 <url>http://192.168.56.103:8081/nexus/content/repositories/snapshots/</url>
           </snapshotRepository>
-	</distributionManagement>-->
-<distributionManagement>
+	</distributionManagement>
+<!--<distributionManagement>
         <repository>
             <id>nexus</id>
             <name>releases</name>
@@ -214,5 +214,5 @@
             <name>snapshots</name>
             <url>http://192.168.56.103::8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-</distributionManagement>
+</distributionManagement>-->
 </project>
