@@ -1,14 +1,15 @@
 pipeline {
     agent any
+    timestamps {
     tools{
     maven 'M2_HOME'
     jdk 'JDK1.8'
      }
      // using the Timestamper plugin we can add timestamps to the console log
     options {
-        timestamps()
+        
         buildDiscarder(logRotator(artifactDaysToKeepStr: '5', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '5'))
-        input message: 'Please Enter Your Choice?', parameters: [choice(choices: ['master'], description: '', name: 'Branch')]
+        //input message: 'Please Enter Your Choice?', parameters: [choice(choices: ['master'], description: '', name: 'Branch')]
         }
     stages {
         /**stage ('Initialize for Shopizer') {
@@ -43,4 +44,5 @@ pipeline {
         }
         
     }
+    }//timestamp
 }//pipeline
