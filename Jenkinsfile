@@ -10,7 +10,7 @@ pipeline {
         buildDiscarder(logRotator(daysToKeepStr: '5'))
         }
     stages {
-        stage ('Initialize for Shopizer') {
+        /**stage ('Initialize for Shopizer') {
                 steps {
                 sh '''
                     echo "This Jenkinsfile for Building Shopizer Project"
@@ -19,7 +19,7 @@ pipeline {
                     echo "JAVA_HOME = ${JAVA_HOME}"
                     '''
                 }
-            }
+            }**/
         stage (' Cloning Code base from GIT'){
             steps {
             checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '58625aea-0548-44b3-9600-627c0f16af02', url: 'https://github.com/ITHelp-Stream/serviceApp.git']]]
