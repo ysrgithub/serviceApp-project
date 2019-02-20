@@ -35,6 +35,11 @@ pipeline {
                 archiveArtifacts '**/**/shopizer.war'
             }
         }
+         stage ('Push Artifacts to Nexus'){
+            steps {
+                nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'sm-shop/target/shopizer.war']], mavenCoordinate: [artifactId: 'shopizer', groupId: 'com.shopizer', packaging: 'war', version: '2.4.0']]]
+            }
+        }
         
     }
 }//pipeline
