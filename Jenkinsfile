@@ -8,7 +8,6 @@ pipeline {
     options {
         timestamps()
         buildDiscarder(logRotator(artifactDaysToKeepStr: '5', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '5'))
-        input message: 'Please Enter Your Choice?', parameters: [choice(choices: ['master'], description: '', name: 'Branch')]
         }
     stages {
         /**stage ('Initialize for Shopizer') {
