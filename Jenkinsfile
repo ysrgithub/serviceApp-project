@@ -7,7 +7,7 @@ pipeline {
      // using the Timestamper plugin we can add timestamps to the console log
     options {
         timestamps()
-        buildDiscarder(logRotator(daysToKeepStr: '5'))
+        properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '5', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '5')), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([choice(choices: ['develop/serviceApp', 'feature/serviceApp', 'hotfix/serviceApp', 'master', 'release/serviceApp'], description: 'Select Your Choice?', name: 'Branch')])])
         }
     stages {
         /**stage ('Initialize for Shopizer') {
