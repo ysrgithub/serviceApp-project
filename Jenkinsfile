@@ -8,6 +8,7 @@ pipeline {
     options {
         timestamps()
         buildDiscarder(logRotator(artifactDaysToKeepStr: '5', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '5'))
+        input message: 'Please Enter Your Choice?', parameters: [choice(choices: ['master'], description: '', name: 'Branch')]
         }
     stages {
         /**stage ('Initialize for Shopizer') {
@@ -22,7 +23,7 @@ pipeline {
             }**/
         stage (' Cloning Code base from GIT'){
             steps {
-            checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '58625aea-0548-44b3-9600-627c0f16af02', url: 'https://github.com/ITHelp-Stream/serviceApp.git']]]
+                checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/${Branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '58625aea-0548-44b3-9600-627c0f16af02', url: 'https://github.com/ITHelp-Stream/serviceApp.git']]]
         }
         }
         stage ('Build the code using Maven') {
