@@ -23,6 +23,7 @@ stages{
 	step{
 	archiveArtifacts '**/**/*.war'
 	}
+	}
 
 	}//stages
 }//pipeline
