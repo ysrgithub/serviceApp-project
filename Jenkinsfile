@@ -19,6 +19,7 @@ stages{
 	step{
 	sh 'mvn clean compile install'	
 	}
+	}
 	stage('Archive the Artifacts'){
 	step{
 	archiveArtifacts '**/**/*.war'
