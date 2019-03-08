@@ -6,7 +6,7 @@ VOLUME /tmp
 # Delete existing ROOT folder
 RUN rm -rf /usr/local/tomcat/webapps/serviceApp
 
-ADD ./target/serviceApp.war /usr/local/tomcat/webapps/
+ADD ./target/shopizer.war /usr/local/tomcat/webapps/
 
 ENV JAVA_OPTS="-Xmx1024m"
 
