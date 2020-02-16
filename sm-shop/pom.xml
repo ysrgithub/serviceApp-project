@@ -190,7 +190,7 @@
    </executions>
    <configuration>
       <serverId>nexus</serverId>
-      <nexusUrl>http://ec2-18-221-39-60.us-east-2.compute.amazonaws.com:8081/nexus/</nexusUrl>
+      <nexusUrl>http://ec2-18-221-39-60.us-east-2.compute.amazonaws.com:8081/nexus</nexusUrl>
       <skipStaging>true</skipStaging>
    </configuration>
 </plugin>
