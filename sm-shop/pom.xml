@@ -199,11 +199,11 @@
 	</build>
 	<distributionManagement>
           <snapshotRepository>
-                <id>nexus</id>
+                <id>snapshots</id>
                 <url>http://ec2-18-221-39-60.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/snapshots/</url>
           </snapshotRepository>
 	  <repository>
-            <id>nexus</id>
+            <id>releases</id>
             <url>http://ec2-18-221-39-60.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/releases/</url>
 	  </repository>
 	</distributionManagement>
