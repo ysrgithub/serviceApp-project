@@ -7,7 +7,13 @@
  
  <proxies>  </proxies>
 
- <servers>  </servers>
+ <servers>
+     <server>
+       <id>nexus</id>
+       <username>admin</username>
+       <password>admin123</password>
+     </server>
+</servers>
  
  <mirrors> </mirrors>
       
