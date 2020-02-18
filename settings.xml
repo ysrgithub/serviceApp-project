@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
- 
- 
- <proxies>  </proxies>
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
- <servers>
+ <mirrors>
+    <mirror>
+      <id>nexus</id>
+      <url>http://ec2-3-135-194-78.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/snapshots</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+</mirrors>
+
+  <servers>
      <server>
-       <id>nexus</id>
+       <id>snapshots</id>
        <username>admin</username>
        <password>admin123</password>
      </server>
-</servers>
- 
- <mirrors> </mirrors>
-      
-<!-- Sonar integration -->
-    <pluginGroups>
-        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
-    </pluginGroups>
-    <profiles>
-        <profile>
-            <id>sonar</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <sonar.host.url>
-                  http://192.168.1.16:9000
-                </sonar.host.url>
-            </properties>
-        </profile>
-     </profiles>
+   </servers>
+
+   <pluginGroups></pluginGroups>
+   <proxies></proxies>
+   <profiles></profiles>
 </settings>
