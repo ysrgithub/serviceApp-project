@@ -190,7 +190,7 @@
    </executions>
    <configuration>
       <serverId>nexus</serverId>
-      <nexusUrlhttp://ec2-3-21-106-238.us-east-2.compute.amazonaws.com:8081/nexus/</nexusUrl>
+      <nexusUrl>http://ec2-3-21-106-238.us-east-2.compute.amazonaws.com:8081/nexus/</nexusUrl>
       <skipStaging>true</skipStaging>
    </configuration>
 </plugin>
@@ -200,7 +200,7 @@
 	<distributionManagement>
           <snapshotRepository>
                 <id>snapshots</id>
-		<urlhttp://ec2-3-21-106-238.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/snapshots/</url>
+				<url>http://ec2-3-21-106-238.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/snapshots/</url>
           </snapshotRepository>
 	  <repository>
             <id>releases</id>
