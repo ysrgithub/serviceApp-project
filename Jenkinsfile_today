@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools{
-    maven 'M2_HOME'
+    maven 'Maven3'
     jdk 'JDK1.8'
      }
      // using the Timestamper plugin we can add timestamps to the console log
