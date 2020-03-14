@@ -7,6 +7,7 @@ pipeline {
    }
    options {
        timestamps()
+       cleanWs()
        buildDiscarder(logRotator(artifactDaysToKeepStr: '10', artifactNumToKeepStr: '10', daysToKeepStr: '10', numToKeepStr: '10'))
    }
  stages {
