@@ -1,0 +1,38 @@
+
+pipeline{
+    agent any
+    tools{
+        jdk 'JDK'
+        maven 'Maven3'
+    }
+    options {
+        timestamps()
+        properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '10', artifactNumToKeepStr: '10', daysToKeepStr: '10', numToKeepStr: '10')), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false]])
+    }
+   stages{       stage ('Display PATH of Jenkins'){
+           steps{
+               sh '''
+               echo " This is Declarative Pipeline for building ServiceApp"
+               echo "PATH = ${PATH}"
+           }
+       }
+    
+        stage ('Checkout the Source code'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '88e01223-d97c-45e2-9be7-912a308e5c49', url: 'https://github.com/ysrgithub/serviceApp-project.git']]])
+                
+            }
+        }
+        stage('Building the Source code using maven'){
+            steps{
+                sh 'mvn clean compile install'
+            }
+        }
+        stage ('Archieve Artifacts for ServiceApp'){
+            steps {
+                archiveArtifacts '**/**/*.war'
+            }
+        }
+    }
+}
+
